@@ -1,0 +1,56 @@
+﻿@model IEnumerable<AfterMarketStocks.Models.StockMarket>
+
+@{
+    ViewBag.Title = "Stock Market";
+}
+<center>
+    <h2>Stock Market Data</h2>
+</center>
+
+@*<table class="table">
+    <tr>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>*@
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.stockMarketId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.stockMarketId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.stockMarketId })*@
+        @*</td>
+    </tr>
+}
+
+</table>*@
+
+
+<!-- TradingView Widget BEGIN -->
+<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+<script type="text/javascript">
+new TradingView.widget({
+  "width": 980,
+  "height": 610,
+  "symbol": "NASDAQ:AAPL",
+  "interval": "D",
+  "timezone": "Etc/UTC",
+  "theme": "Light",
+  "style": "1",
+  "locale": "en",
+  "toolbar_bg": "rgba(0, 0, 0, 1)",
+  "enable_publishing": false,
+  "allow_symbol_change": true,
+  "watchlist": [
+    "NASDAQ:TSLA",
+    "NASDAQ:AAPL",
+    "NYSE:TWTR"
+  ],
+  "hotlist": true,
+  "news": [
+    "headlines"
+  ],
+  "hideideas": true
+});
+</script>
+<!-- TradingView Widget END -->
+

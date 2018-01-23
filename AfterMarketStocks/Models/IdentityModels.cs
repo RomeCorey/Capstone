@@ -29,5 +29,11 @@ namespace AfterMarketStocks.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<AfterMarketStocks.Models.MyStocks> MyStocks { get; set; }
+
+        public System.Data.Entity.DbSet<AfterMarketStocks.Models.StockMarket> StockMarkets { get; set; }
+
+        public System.Data.Entity.DbSet<AfterMarketStocks.Models.BuySell> BuySells { get; set; }
     }
 }
