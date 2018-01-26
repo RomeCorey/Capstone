@@ -11,7 +11,13 @@ namespace AfterMarketStocks.Models
     {
         [Key]
         public int myStockId { get; set; }
+        [Display(Name = "User Name")]
         public string userName { get; set; }
+        [Display(Name = "Stock")]
         public IEnumerable userStocks { get; set; }
+        [Display(Name = "Stock")]
+        public string stock { get; set; }
+        [Display(Name = "Current Price")]
+        public float currentPrice { get; set; }
     }
 }

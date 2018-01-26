@@ -4,23 +4,35 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Buy / Sell Stocks</h2>
 
-<p>
+@*<p>
     @Html.ActionLink("Create New", "Create")
-</p>
+</p>*@
 <table class="table">
     <tr>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.userStock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.currentPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.buy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sell)
+        </th>
+        
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
+        @*<td>
             @Html.ActionLink("Edit", "Edit", new { id=item.buySellId }) |
             @Html.ActionLink("Details", "Details", new { id=item.buySellId }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.buySellId })
-        </td>
+        </td>*@
     </tr>
 }
 
