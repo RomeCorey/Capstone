@@ -37,3 +37,18 @@
 }
 
 </table>
+
+
+<form action="/BuySells/Charge" method="POST">
+    <article>
+        <label>Amount: $100.00</label>
+    </article>
+    <script src="//checkout.stripe.com/checkout.js"
+            class="stripe-button"
+            data-key="pk_test_SaFggqFgMnroET7tNmFFh8XL"
+            data-locale="auto"
+            data-description="Sample Charge"
+            data-currency="usd"
+            data-amount="">
+    </script>
+</form>
