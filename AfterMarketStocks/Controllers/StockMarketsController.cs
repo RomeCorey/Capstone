@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using AfterMarketStocks.Models;
+using Microsoft.AspNet.Identity;
 
 namespace AfterMarketStocks.Controllers
 {
@@ -127,6 +128,7 @@ namespace AfterMarketStocks.Controllers
 
         public  ActionResult Watchlist()
         {
+            
             return View();
         }
     }

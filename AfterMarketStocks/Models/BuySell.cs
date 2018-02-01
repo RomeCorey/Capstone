@@ -18,6 +18,7 @@ namespace AfterMarketStocks.Models
         public string symbol { get; set; }
         [Display(Name = "Current Price")]
         public string currentPrice { get; set; }
+        // FK that points to UserId
         
     }
 }
