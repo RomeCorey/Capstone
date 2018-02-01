@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using AfterMarketStocks.Models;
+using Microsoft.AspNet.Identity;
 
 namespace AfterMarketStocks.Controllers
 {
@@ -17,10 +18,11 @@ namespace AfterMarketStocks.Controllers
         // GET: MyStocks
         public ActionResult Index()
         {
-            List<MyStocks> stockList = db.MyStocks.ToList();
-            foreach(MyStocks item in stockList)
+            var userid = User.Identity.GetUserId();
+            List<UserstockJunction> stockList = (from x in db.UserStocks.Include("Stock") where x.User.Id == userid select x).ToList();
+            foreach(UserstockJunction item in stockList)
             {
-                item.currentPrice = Classes.ApiStatic.GetCurrentPrice(item.symbol);
+                item.Stock.currentPrice= Classes.ApiStatic.GetCurrentPrice(item.Stock.symbol);
             }
 
             return View(stockList);
@@ -102,7 +104,7 @@ namespace AfterMarketStocks.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            MyStocks myStocks = db.MyStocks.Find(id);
+            UserstockJunction myStocks = db.UserStocks.Find(id);
             if (myStocks == null)
             {
                 return HttpNotFound();
@@ -115,8 +117,8 @@ namespace AfterMarketStocks.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            MyStocks myStocks = db.MyStocks.Find(id);
-            db.MyStocks.Remove(myStocks);
+            UserstockJunction myStocks = (from x in db.UserStocks.Include("Stock") where x.Id == id select x).FirstOrDefault();
+            db.UserStocks.Remove(myStocks);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

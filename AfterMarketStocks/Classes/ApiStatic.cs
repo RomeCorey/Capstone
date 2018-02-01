@@ -24,11 +24,20 @@ namespace AfterMarketStocks.Classes
             var request = new RestRequest(Method.GET);
             request.AddHeader("Postman-Token", "2623fc44-fda5-6ce1-f656-ea90d2e4d0f9");
             request.AddHeader("Cache-Control", "no-cache");
-            IRestResponse response = client.Execute(request);
+            string stockPrice = "not found";
+            try
+            {
+                IRestResponse response = client.Execute(request);
 
-            AlphaStock responseData = JsonConvert.DeserializeObject<AlphaStock>(response.Content);
-            string stockPrice = responseData.TimeSeries1Min["2018-02-01 11:41:00"].The2High.ToString();
+                AlphaStock responseData = AlphaStock.FromJson(response.Content);
+                stockPrice = responseData.TimeSeries1Min["2018-02-01 14:50:00"].The2High.ToString();
+            }
+            catch (Exception)
+            {
 
+                
+            }
+            
 
             return stockPrice;
         }

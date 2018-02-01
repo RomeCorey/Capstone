@@ -1,4 +1,4 @@
-﻿@model AfterMarketStocks.Models.MyStocks
+﻿@model AfterMarketStocks.Models.UserstockJunction
 
 @{
     ViewBag.Title = "Sell";
@@ -11,23 +11,8 @@
     
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.stock)
-        </dt>
+        
 
-        <dd>
-            @Html.DisplayFor(model => model.stock)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.currentPrice)
-        </dt>
-
-        <dd>
-            item.currentPrice = Classes.ApiStatic.GetCurrentPrice(item.symbol);
-            @Html.DisplayFor(model => model.currentPrice)
-            
-        </dd>
 
     </dl>
 

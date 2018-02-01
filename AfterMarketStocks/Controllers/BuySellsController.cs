@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using AfterMarketStocks.Models;
+using Microsoft.AspNet.Identity;
 
 namespace AfterMarketStocks.Controllers
 {
@@ -17,12 +18,24 @@ namespace AfterMarketStocks.Controllers
         // GET: BuySells
         public ActionResult Index()
         {
-            List<MyStocks> stockList = db.MyStocks.ToList();
-            foreach (MyStocks item in stockList)
+            List<BuySell> stockList = db.BuySells.ToList();
+            foreach (BuySell item in stockList)
             {
                 item.currentPrice = Classes.ApiStatic.GetCurrentPrice(item.symbol);
             }
-            return View(db.BuySells.ToList());
+
+            return View(stockList);
+        }
+
+        public ActionResult AddStockAndRedirectToIndex(int id)
+        {
+            var userid = User.Identity.GetUserId();
+            UserstockJunction userstock = new UserstockJunction();
+            userstock.Stock = (from x in db.BuySells where x.buySellId == id select x).FirstOrDefault();
+            userstock.User = (from x in db.Users where x.Id == userid select x).FirstOrDefault();
+            db.UserStocks.Add(userstock);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         // GET: BuySells/Details/5
@@ -51,7 +64,7 @@ namespace AfterMarketStocks.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "buySellId,userStock,currentPrice,buy,sell")] BuySell buySell)
+        public ActionResult Create([Bind(Include = "buySellId,stock,currentPrice,symbol")] BuySell buySell)
         {
             if (ModelState.IsValid)
             {

@@ -232,6 +232,14 @@
     <Compile Include="Migrations\201802011701434_addedSymbolToBuySell.Designer.cs">
       <DependentUpon>201802011701434_addedSymbolToBuySell.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802011733332_editedBuySellStockTable.cs" />
+    <Compile Include="Migrations\201802011733332_editedBuySellStockTable.Designer.cs">
+      <DependentUpon>201802011733332_editedBuySellStockTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802012023561_addedJunctionTable.cs" />
+    <Compile Include="Migrations\201802012023561_addedJunctionTable.Designer.cs">
+      <DependentUpon>201802012023561_addedJunctionTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AlphaStock.cs" />
@@ -242,6 +250,7 @@
     <Compile Include="Models\StockData.cs" />
     <Compile Include="Models\StockMarket.cs" />
     <Compile Include="Models\Stripe.cs" />
+    <Compile Include="Models\UserstockJunction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -344,6 +353,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802011701434_addedSymbolToBuySell.resx">
       <DependentUpon>201802011701434_addedSymbolToBuySell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802011733332_editedBuySellStockTable.resx">
+      <DependentUpon>201802011733332_editedBuySellStockTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802012023561_addedJunctionTable.resx">
+      <DependentUpon>201802012023561_addedJunctionTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

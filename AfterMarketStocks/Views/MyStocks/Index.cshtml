@@ -1,4 +1,4 @@
-﻿@model IEnumerable<AfterMarketStocks.Models.MyStocks>
+﻿@model IEnumerable<AfterMarketStocks.Models.UserstockJunction>
 
 @{
     ViewBag.Title = "My Stocks";
@@ -12,13 +12,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.stock)
+            @Html.DisplayNameFor(model => model.Stock.stock)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.currentPrice)
+            @Html.DisplayNameFor(model => model.Stock.symbol)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.symbol)
+            @Html.DisplayNameFor(model => model.Stock.currentPrice)
         </th>
         <th></th>
     </tr>
@@ -26,18 +26,18 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.stock)
+            @Html.DisplayFor(modelItem => item.Stock.stock)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.currentPrice)
+            @Html.DisplayFor(modelItem => item.Stock.symbol)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.symbol)
+            @Html.DisplayFor(modelItem => item.Stock.currentPrice)
         </td>
         <td>
             @*@Html.ActionLink("Edit", "Edit", new { id=item.myStockId }) |
             @Html.ActionLink("Details", "Details", new { id=item.myStockId }) |*@
-            @Html.ActionLink("Sell Stock", "Delete", new { id = item.myStockId })
+            @Html.ActionLink("Sell Stock", "Delete", new { id = item.Id })
         </td>
     </tr>
 }

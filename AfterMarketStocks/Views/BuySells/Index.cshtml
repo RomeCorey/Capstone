@@ -12,11 +12,15 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.userStock)
+            @Html.DisplayNameFor(model => model.stock)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.symbol)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.currentPrice)
         </th>
+        
         
         <th></th>
     </tr>
@@ -24,11 +28,15 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.userStock)
+            @Html.DisplayFor(modelItem => item.stock)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.symbol)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.currentPrice)
         </td>
+        
         
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.buySellId }) |
@@ -36,7 +44,7 @@
             @Html.ActionLink("Delete", "Delete", new { id=item.buySellId })
         </td>
         <td>
-            <form action="/BuySells/Index" method="POST">
+            <form action="/BuySells/AddStockAndRedirectToIndex/@item.buySellId" method="POST">
                 <article>
                     <label>Buy Stock</label>
                 </article>
@@ -50,9 +58,6 @@
                 </script>
             </form>
         </td>
-
-
-
     </tr>
 }
 

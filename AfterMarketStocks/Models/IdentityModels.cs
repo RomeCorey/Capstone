@@ -35,5 +35,8 @@ namespace AfterMarketStocks.Models
         public System.Data.Entity.DbSet<AfterMarketStocks.Models.StockMarket> StockMarkets { get; set; }
 
         public System.Data.Entity.DbSet<AfterMarketStocks.Models.BuySell> BuySells { get; set; }
+
+        public System.Data.Entity.DbSet<AfterMarketStocks.Models.UserstockJunction> UserStocks { get; set; }
     }
 }
+
