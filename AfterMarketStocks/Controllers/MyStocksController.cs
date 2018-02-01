@@ -17,7 +17,13 @@ namespace AfterMarketStocks.Controllers
         // GET: MyStocks
         public ActionResult Index()
         {
-            return View(db.MyStocks.ToList());
+            List<MyStocks> stockList = db.MyStocks.ToList();
+            foreach(MyStocks item in stockList)
+            {
+                item.currentPrice = Classes.ApiStatic.GetCurrentPrice(item.symbol);
+            }
+
+            return View(stockList);
         }
 
         // GET: MyStocks/Details/5
@@ -46,7 +52,7 @@ namespace AfterMarketStocks.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "myStockId,stock,currentPrice")] MyStocks myStocks)
+        public ActionResult Create([Bind(Include = "myStockId,stock,currentPrice,symbol")] MyStocks myStocks)
         {
             if (ModelState.IsValid)
             {

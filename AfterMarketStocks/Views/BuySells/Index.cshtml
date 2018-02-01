@@ -4,7 +4,7 @@
     ViewBag.Title = "Buy/Sell";
 }
 
-<h2>Index</h2>
+<h2>Buy / Sell</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -17,12 +17,7 @@
         <th>
             @Html.DisplayNameFor(model => model.currentPrice)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.buy)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.sell)
-        </th>
+        
         <th></th>
     </tr>
 
@@ -34,17 +29,30 @@
         <td>
             @Html.DisplayFor(modelItem => item.currentPrice)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.buy)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.sell)
-        </td>
+        
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.buySellId }) |
             @Html.ActionLink("Details", "Details", new { id=item.buySellId }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.buySellId })
         </td>
+        <td>
+            <form action="/BuySells/Index" method="POST">
+                <article>
+                    <label>Buy Stock</label>
+                </article>
+                <script src="//checkout.stripe.com/checkout.js"
+                        class="stripe-button"
+                        data-key="pk_test_SaFggqFgMnroET7tNmFFh8XL"
+                        data-locale="auto"
+                        data-description="Sample Charge"
+                        data-currency="usd"
+                        data-amount="">
+                </script>
+            </form>
+        </td>
+
+
+
     </tr>
 }
 

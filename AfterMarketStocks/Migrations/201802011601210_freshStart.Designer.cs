@@ -7,13 +7,13 @@ namespace AfterMarketStocks.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class freshStart : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(freshStart));
         
         string IMigrationMetadata.Id
         {
-            get { return "201801231554337_InitialCreate"; }
+            get { return "201802011601210_freshStart"; }
         }
         
         string IMigrationMetadata.Source

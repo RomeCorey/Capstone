@@ -10,7 +10,6 @@ namespace AfterMarketStocks.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "AfterMarketStocks.Models.ApplicationDbContext";
         }
 
         protected override void Seed(AfterMarketStocks.Models.ApplicationDbContext context)

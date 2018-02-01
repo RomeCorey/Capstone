@@ -224,33 +224,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201801231554337_InitialCreate.cs" />
-    <Compile Include="Migrations\201801231554337_InitialCreate.Designer.cs">
-      <DependentUpon>201801231554337_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201802011601210_freshStart.cs" />
+    <Compile Include="Migrations\201802011601210_freshStart.Designer.cs">
+      <DependentUpon>201802011601210_freshStart.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201801231607503_initialMigration.cs" />
-    <Compile Include="Migrations\201801231607503_initialMigration.Designer.cs">
-      <DependentUpon>201801231607503_initialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801232001053_updatedModelTables.cs" />
-    <Compile Include="Migrations\201801232001053_updatedModelTables.Designer.cs">
-      <DependentUpon>201801232001053_updatedModelTables.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801232020158_updatedBuySellTable.cs" />
-    <Compile Include="Migrations\201801232020158_updatedBuySellTable.Designer.cs">
-      <DependentUpon>201801232020158_updatedBuySellTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801301739209_checkingBuySell.cs" />
-    <Compile Include="Migrations\201801301739209_checkingBuySell.Designer.cs">
-      <DependentUpon>201801301739209_checkingBuySell.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802010124372_updateToMyStocks.cs" />
-    <Compile Include="Migrations\201802010124372_updateToMyStocks.Designer.cs">
-      <DependentUpon>201802010124372_updateToMyStocks.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802011320504_addedWatchlistView.cs" />
-    <Compile Include="Migrations\201802011320504_addedWatchlistView.Designer.cs">
-      <DependentUpon>201802011320504_addedWatchlistView.cs</DependentUpon>
+    <Compile Include="Migrations\201802011701434_addedSymbolToBuySell.cs" />
+    <Compile Include="Migrations\201802011701434_addedSymbolToBuySell.Designer.cs">
+      <DependentUpon>201802011701434_addedSymbolToBuySell.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -359,26 +339,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201801231554337_InitialCreate.resx">
-      <DependentUpon>201801231554337_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201802011601210_freshStart.resx">
+      <DependentUpon>201802011601210_freshStart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801231607503_initialMigration.resx">
-      <DependentUpon>201801231607503_initialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801232001053_updatedModelTables.resx">
-      <DependentUpon>201801232001053_updatedModelTables.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801232020158_updatedBuySellTable.resx">
-      <DependentUpon>201801232020158_updatedBuySellTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801301739209_checkingBuySell.resx">
-      <DependentUpon>201801301739209_checkingBuySell.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802010124372_updateToMyStocks.resx">
-      <DependentUpon>201802010124372_updateToMyStocks.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802011320504_addedWatchlistView.resx">
-      <DependentUpon>201802011320504_addedWatchlistView.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201802011701434_addedSymbolToBuySell.resx">
+      <DependentUpon>201802011701434_addedSymbolToBuySell.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

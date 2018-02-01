@@ -7,13 +7,13 @@ namespace AfterMarketStocks.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class addedWatchlistView : IMigrationMetadata
+    public sealed partial class addedSymbolToBuySell : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addedWatchlistView));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addedSymbolToBuySell));
         
         string IMigrationMetadata.Id
         {
-            get { return "201802011320504_addedWatchlistView"; }
+            get { return "201802011701434_addedSymbolToBuySell"; }
         }
         
         string IMigrationMetadata.Source

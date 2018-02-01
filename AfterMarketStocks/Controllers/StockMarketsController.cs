@@ -124,5 +124,10 @@ namespace AfterMarketStocks.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public  ActionResult Watchlist()
+        {
+            return View();
+        }
     }
 }

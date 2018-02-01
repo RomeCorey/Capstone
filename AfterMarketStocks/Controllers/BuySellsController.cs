@@ -17,6 +17,11 @@ namespace AfterMarketStocks.Controllers
         // GET: BuySells
         public ActionResult Index()
         {
+            List<MyStocks> stockList = db.MyStocks.ToList();
+            foreach (MyStocks item in stockList)
+            {
+                item.currentPrice = Classes.ApiStatic.GetCurrentPrice(item.symbol);
+            }
             return View(db.BuySells.ToList());
         }
 

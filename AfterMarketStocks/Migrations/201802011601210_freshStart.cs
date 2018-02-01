@@ -3,16 +3,28 @@ namespace AfterMarketStocks.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class freshStart : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.BuySells",
+                c => new
+                    {
+                        buySellId = c.Int(nullable: false, identity: true),
+                        userStock = c.String(),
+                        currentPrice = c.Single(nullable: false),
+                    })
+                .PrimaryKey(t => t.buySellId);
+            
             CreateTable(
                 "dbo.MyStocks",
                 c => new
                     {
                         myStockId = c.Int(nullable: false, identity: true),
-                        userName = c.String(),
+                        stock = c.String(),
+                        symbol = c.String(),
+                        currentPrice = c.String(),
                     })
                 .PrimaryKey(t => t.myStockId);
             
@@ -113,6 +125,7 @@ namespace AfterMarketStocks.Migrations
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
             DropTable("dbo.MyStocks");
+            DropTable("dbo.BuySells");
         }
     }
 }
