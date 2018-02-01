@@ -248,6 +248,10 @@
     <Compile Include="Migrations\201802010124372_updateToMyStocks.Designer.cs">
       <DependentUpon>201802010124372_updateToMyStocks.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802011320504_addedWatchlistView.cs" />
+    <Compile Include="Migrations\201802011320504_addedWatchlistView.Designer.cs">
+      <DependentUpon>201802011320504_addedWatchlistView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AlphaStock.cs" />
@@ -338,6 +342,7 @@
     <Content Include="Views\BuySells\Edit.cshtml" />
     <Content Include="Views\BuySells\Index.cshtml" />
     <Content Include="Views\BuySells\Charge.cshtml" />
+    <Content Include="Views\StockMarkets\Watchlist.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -371,6 +376,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802010124372_updateToMyStocks.resx">
       <DependentUpon>201802010124372_updateToMyStocks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802011320504_addedWatchlistView.resx">
+      <DependentUpon>201802011320504_addedWatchlistView.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

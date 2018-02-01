@@ -1,28 +1,27 @@
-﻿@model IEnumerable<AfterMarketStocks.Models.StockMarket>
-
+﻿
 @{
-    ViewBag.Title = "Stock Market";
+    ViewBag.Title = "Stock Market Watchlist";
 }
 <center>
-    <h2>Stock Market Data</h2>
+    <h2>Stock Market Data and Watchlist</h2>
 </center>
 
 @*<table class="table">
-    <tr>
-        <th></th>
-    </tr>
+        <tr>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>*@
-            @*@Html.ActionLink("Edit", "Edit", new { id=item.stockMarketId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.stockMarketId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.stockMarketId })*@
-        @*</td>
-    </tr>
-}
+    @foreach (var item in Model) {
+        <tr>
+            <td>*@
+@*@Html.ActionLink("Edit", "Edit", new { id=item.stockMarketId }) |
+    @Html.ActionLink("Details", "Details", new { id=item.stockMarketId }) |
+    @Html.ActionLink("Delete", "Delete", new { id=item.stockMarketId })*@
+@*</td>
+        </tr>
+    }
 
-</table>*@
+    </table>*@
 
 
 <!-- TradingView Widget BEGIN -->
@@ -40,7 +39,11 @@ new TradingView.widget({
   "toolbar_bg": "rgba(0, 0, 0, 1)",
   "enable_publishing": false,
   "allow_symbol_change": true,
-  
+  "watchlist": [
+    "NASDAQ:TSLA",
+    "NASDAQ:AAPL",
+    "NYSE:TWTR"
+  ],
   "hotlist": true,
   "news": [
     "headlines"
@@ -49,4 +52,3 @@ new TradingView.widget({
 });
 </script>
 <!-- TradingView Widget END -->
-
