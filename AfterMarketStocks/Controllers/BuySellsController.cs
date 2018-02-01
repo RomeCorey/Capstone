@@ -10,7 +10,6 @@ using AfterMarketStocks.Models;
 
 namespace AfterMarketStocks.Controllers
 {
-    [Authorize]
     public class BuySellsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -47,7 +46,7 @@ namespace AfterMarketStocks.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "buySellId")] BuySell buySell)
+        public ActionResult Create([Bind(Include = "buySellId,userStock,currentPrice,buy,sell")] BuySell buySell)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +78,7 @@ namespace AfterMarketStocks.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "buySellId")] BuySell buySell)
+        public ActionResult Edit([Bind(Include = "buySellId,userStock,currentPrice,buy,sell")] BuySell buySell)
         {
             if (ModelState.IsValid)
             {

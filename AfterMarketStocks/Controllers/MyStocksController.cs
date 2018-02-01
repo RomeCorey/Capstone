@@ -1,4 +1,4 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -10,7 +10,6 @@ using AfterMarketStocks.Models;
 
 namespace AfterMarketStocks.Controllers
 {
-    [Authorize]
     public class MyStocksController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -47,7 +46,7 @@ namespace AfterMarketStocks.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "myStockId,userName")] MyStocks myStocks)
+        public ActionResult Create([Bind(Include = "myStockId,stock,currentPrice")] MyStocks myStocks)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +78,7 @@ namespace AfterMarketStocks.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "myStockId,userName")] MyStocks myStocks)
+        public ActionResult Edit([Bind(Include = "myStockId,stock,currentPrice")] MyStocks myStocks)
         {
             if (ModelState.IsValid)
             {

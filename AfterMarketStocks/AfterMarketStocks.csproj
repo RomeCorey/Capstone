@@ -213,12 +213,12 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Classes\ApiStatic.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BuySellsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MyStocksController.cs" />
-    <Compile Include="Controllers\StockApiController.cs" />
     <Compile Include="Controllers\StockMarketsController.cs" />
     <Compile Include="Controllers\StripeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -240,6 +240,14 @@
     <Compile Include="Migrations\201801232020158_updatedBuySellTable.Designer.cs">
       <DependentUpon>201801232020158_updatedBuySellTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801301739209_checkingBuySell.cs" />
+    <Compile Include="Migrations\201801301739209_checkingBuySell.Designer.cs">
+      <DependentUpon>201801301739209_checkingBuySell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802010124372_updateToMyStocks.cs" />
+    <Compile Include="Migrations\201802010124372_updateToMyStocks.Designer.cs">
+      <DependentUpon>201802010124372_updateToMyStocks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AlphaStock.cs" />
@@ -247,6 +255,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MyStocks.cs" />
+    <Compile Include="Models\StockData.cs" />
     <Compile Include="Models\StockMarket.cs" />
     <Compile Include="Models\Stripe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -356,6 +365,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801232020158_updatedBuySellTable.resx">
       <DependentUpon>201801232020158_updatedBuySellTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801301739209_checkingBuySell.resx">
+      <DependentUpon>201801301739209_checkingBuySell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802010124372_updateToMyStocks.resx">
+      <DependentUpon>201802010124372_updateToMyStocks.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

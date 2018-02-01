@@ -9,7 +9,7 @@ using System.Net;
 namespace AfterMarketStocks.Models
 {
    
-    public partial class Welcome
+    public partial class AlphaStock
     {
         [JsonProperty("Meta Data")]
         public MetaData MetaData { get; set; }
@@ -57,14 +57,14 @@ namespace AfterMarketStocks.Models
         public string The5Volume { get; set; }
     }
 
-    public partial class Welcome
+    public partial class AlphaStock
     {
-        public static Welcome FromJson(string json) => JsonConvert.DeserializeObject<Welcome>(json, Converter.Settings);
+        public static AlphaStock FromJson(string json) => JsonConvert.DeserializeObject<AlphaStock>(json, Converter.Settings);
     }
 
     public static class Serialize
     {
-        public static string ToJson(this Welcome self) => JsonConvert.SerializeObject(self, Converter.Settings);
+        public static string ToJson(this AlphaStock self) => JsonConvert.SerializeObject(self, Converter.Settings);
     }
 
     public class Converter

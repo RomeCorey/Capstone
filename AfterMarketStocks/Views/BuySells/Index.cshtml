@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<AfterMarketStocks.Models.BuySell>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Buy/Sell";
 }
 
-<h2>Buy / Sell Stocks</h2>
+<h2>Index</h2>
 
-@*<p>
+<p>
     @Html.ActionLink("Create New", "Create")
-</p>*@
+</p>
 <table class="table">
     <tr>
         <th>
@@ -23,47 +23,29 @@
         <th>
             @Html.DisplayNameFor(model => model.sell)
         </th>
-        
+        <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-        <form action="/BuySells/Charge" method="POST">
-            <article>
-                <label>Amount: $100.00</label>
-            </article>
-            <script src="//checkout.stripe.com/checkout.js"
-                    class="stripe-button"
-                    data-key="pk_test_SaFggqFgMnroET7tNmFFh8XL"
-                    data-locale="auto"
-                    data-description="Sample Charge"
-                    data-currency="usd"
-                    data-amount="">
-            </script>
-        </form>
+            @Html.DisplayFor(modelItem => item.userStock)
         </td>
-        @*<td>
+        <td>
+            @Html.DisplayFor(modelItem => item.currentPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.buy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sell)
+        </td>
+        <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.buySellId }) |
             @Html.ActionLink("Details", "Details", new { id=item.buySellId }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.buySellId })
-        </td>*@
+        </td>
     </tr>
 }
 
 </table>
-
-
-<form action="/BuySells/Charge" method="POST">
-    <article>
-        <label>Amount: $100.00</label>
-    </article>
-    <script src="//checkout.stripe.com/checkout.js"
-            class="stripe-button"
-            data-key="pk_test_SaFggqFgMnroET7tNmFFh8XL"
-            data-locale="auto"
-            data-description="Sample Charge"
-            data-currency="usd"
-            data-amount="">
-    </script>
-</form>

@@ -11,8 +11,7 @@ namespace AfterMarketStocks.Models
     {
         [Key]
         public int myStockId { get; set; }
-        [Display(Name = "User Name")]
-        public string userName { get; set; }
+        
         [Display(Name = "Stock")]
         public IEnumerable userStocks { get; set; }
         [Display(Name = "Stock")]
