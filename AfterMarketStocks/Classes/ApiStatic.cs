@@ -30,7 +30,7 @@ namespace AfterMarketStocks.Classes
                 IRestResponse response = client.Execute(request);
 
                 AlphaStock responseData = AlphaStock.FromJson(response.Content);
-                stockPrice = responseData.TimeSeries1Min["2018-02-01 14:50:00"].The2High.ToString();
+                stockPrice = responseData.TimeSeries1Min["2018-02-02 09:36:00"].The2High.ToString();
             }
             catch (Exception)
             {

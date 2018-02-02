@@ -4,11 +4,12 @@
     ViewBag.Title = "Buy/Sell";
 }
 
-<h2>Buy / Sell</h2>
+<h2>Buy Stocks</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+@*<p>
+    @Html.ActionLink("Add Potential Stock to Buy List", "Create")
+    <a class="btn btn-primary" @Html.ActionLink("Add Potential Stock to Buy List", "Create")</a>
+</p>*@
 <table class="table">
     <tr>
         <th>
@@ -35,14 +36,13 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.currentPrice)
-        </td>
+        </td>       
         
-        
-        <td>
+        @*<td>
             @Html.ActionLink("Edit", "Edit", new { id=item.buySellId }) |
             @Html.ActionLink("Details", "Details", new { id=item.buySellId }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.buySellId })
-        </td>
+        </td>*@
         <td>
             <form action="/BuySells/AddStockAndRedirectToIndex/@item.buySellId" method="POST">
                 <article>
@@ -62,3 +62,4 @@
 }
 
 </table>
+<a class="btn btn-primary" @Html.ActionLink("Add Potential Stock to Buy List", "Create")</a>
